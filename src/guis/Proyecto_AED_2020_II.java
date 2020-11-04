@@ -11,9 +11,14 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.UIManager;
 
 public class Proyecto_AED_2020_II extends JFrame implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JMenuBar menuBar;
 	private JMenu mnNewMenu;
@@ -36,6 +41,11 @@ public class Proyecto_AED_2020_II extends JFrame implements ActionListener {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -53,6 +63,7 @@ public class Proyecto_AED_2020_II extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public Proyecto_AED_2020_II() {
+		setResizable(false);
 		setTitle("Proyecto AED 2020 II desarrollado por ABC SRL");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 600);
@@ -103,11 +114,11 @@ public class Proyecto_AED_2020_II extends JFrame implements ActionListener {
 		mnReporte = new JMenu("Reporte");
 		menuBar.add(mnReporte);
 		
-		mntmAlumnosConMatrcula = new JMenuItem("Alumnos con matrícula pendiente");
+		mntmAlumnosConMatrcula = new JMenuItem("Alumnos con matr\u00EDcula pendiente");
 		mntmAlumnosConMatrcula.addActionListener(this);
 		mnReporte.add(mntmAlumnosConMatrcula);
 		
-		mntmAlumnosConMatrcula_1 = new JMenuItem("Alumnos con matrícula vigente");
+		mntmAlumnosConMatrcula_1 = new JMenuItem("Alumnos con matr\u00EDcula vigente");
 		mntmAlumnosConMatrcula_1.addActionListener(this);
 		mnReporte.add(mntmAlumnosConMatrcula_1);
 		
@@ -156,51 +167,51 @@ public class Proyecto_AED_2020_II extends JFrame implements ActionListener {
 		System.exit(0);
 	}
 	protected void actionPerformedMntmAlumno(ActionEvent e) {
-		DlgAlumno da = new DlgAlumno();
+		DlgManAlumno da = new DlgManAlumno();
 		da.setLocationRelativeTo(this);
 		da.setVisible(true);
 		
 		
 	}
 	protected void actionPerformedMntmCurso(ActionEvent e) {
-		DlgCurso dc = new DlgCurso();
+		DlgManCurso dc = new DlgManCurso();
 		dc.setLocationRelativeTo(this);
 		dc.setVisible(true);
 	}
 	protected void actionPerformedMntmMatricula(ActionEvent e) {
-		DlgMatricula dm =  new DlgMatricula();
+		DlgRegMatricula dm =  new DlgRegMatricula();
 		dm.setLocationRelativeTo(this);
 		dm.setVisible(true);
 		
 	}
 	
 	protected void actionPerformedMntmRetiro(ActionEvent e) {
-		DlgRetiro dr = new DlgRetiro();
+		DlgRegRetiro dr = new DlgRegRetiro();
 		dr.setLocationRelativeTo(this);
 		dr.setVisible(true);
 	}
 	protected void actionPerformedMntmAlumnosYCursos(ActionEvent e) {
-		DlgAlumnoCurso dac = new DlgAlumnoCurso();
+		DlgConsAlumnosCursos dac = new DlgConsAlumnosCursos();
 		dac.setLocationRelativeTo(this);
 		dac.setVisible(true);
 	}
 	protected void actionPerformedMntmMatriculasYRetiros(ActionEvent e) {
-		DlgMatriculaRetiro dmr = new DlgMatriculaRetiro();
+		DlgConsMatriculasRetiros dmr = new DlgConsMatriculasRetiros();
 		dmr.setLocationRelativeTo(this);
 		dmr.setVisible(true);
 	}
 	protected void actionPerformedMntmAlumnosConMatrcula(ActionEvent e) {
-		DlgMatriculaPendiente dmp = new DlgMatriculaPendiente();
+		DlgRepoMatriculaPendiente dmp = new DlgRepoMatriculaPendiente();
 		dmp.setLocationRelativeTo(this);
 		dmp.setVisible(true);
 	}
 	protected void actionPerformedMntmAlumnosConMatrcula_1(ActionEvent e) {
-		DlgMatriculaVigente dmv = new DlgMatriculaVigente();
+		DlgRepoMatriculaVigente dmv = new DlgRepoMatriculaVigente();
 		dmv.setLocationRelativeTo(this);
 		dmv.setVisible(true);
 	}
 	protected void actionPerformedMntmAlumnosMatriculadosPor(ActionEvent e) {
-		DlgMatriculadosCurso dmc = new DlgMatriculadosCurso();
+		DlgRepoMatriculadosCurso dmc = new DlgRepoMatriculadosCurso();
 		dmc.setLocationRelativeTo(this);
 		dmc.setVisible(true);
 	}
