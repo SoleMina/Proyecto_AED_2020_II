@@ -41,11 +41,6 @@ public class Proyecto_AED_2020_II extends JFrame implements ActionListener {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		try {
-			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -58,6 +53,7 @@ public class Proyecto_AED_2020_II extends JFrame implements ActionListener {
 			}
 		});
 	}
+
 
 	/**
 	 * Create the frame.
