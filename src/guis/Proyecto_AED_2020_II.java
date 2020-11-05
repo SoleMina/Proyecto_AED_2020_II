@@ -164,7 +164,7 @@ public class Proyecto_AED_2020_II extends JFrame implements ActionListener {
 		}
 	}
 	protected void actionPerformedMntmSalir(ActionEvent e) {
-		System.exit(0);
+		dispose();
 	}
 	protected void actionPerformedMntmAlumno(ActionEvent e) {
 		DlgManAlumno da = new DlgManAlumno();
