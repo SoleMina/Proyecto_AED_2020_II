@@ -17,55 +17,39 @@ public class Matricula {
 	}
 	//  Métodos de acceso público: set/get
 
-
-
-
-	public int getNumMatricula() {
-		return numMatricula;
-	}
-
-
+       //set
 	public void setNumMatricula(int numMatricula) {
 		this.numMatricula = numMatricula;
 	}
-
-
-	public int getCodAlumno() {
-		return codAlumno;
-	}
-
-
 	public void setCodAlumno(int codAlumno) {
 		this.codAlumno = codAlumno;
 	}
-
-
-	public int getCodCurso() {
-		return codCurso;
-	}
-
-
+	
 	public void setCodCurso(int codCurso) {
 		this.codCurso = codCurso;
 	}
-
-
-	public String getFecha() {
-		return fecha;
-	}
-
-
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}
-
-
+	public void setHora(String hora) {
+		this.hora = hora;
+	}
+	
+       //get
+	public int getNumMatricula() {
+		return numMatricula;
+	}
+	public int getCodAlumno() {
+		return codAlumno;
+	}
+	public int getCodCurso() {
+		return codCurso;
+	}
+	public String getFecha() {
+		return fecha;
+	}
 	public String getHora() {
 		return hora;
 	}
 
-
-	public void setHora(String hora) {
-		this.hora = hora;
-	}
 }

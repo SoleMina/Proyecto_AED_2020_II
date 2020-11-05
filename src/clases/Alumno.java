@@ -3,16 +3,17 @@ package clases;
 public class Alumno {
           
 	//	Atributos privados
-	private int codigoAlumno, edad;
-	private String nombre, apellido, celular, dni;
+	private int codigoAlumno, edad, celular, estado;
+	private String nombre, apellido, dni;
 
 	//	Constructor
-	public Alumno(int codigoAlumno, int edad, String nombre, String apellido, String celular, String dni) {
+	public Alumno(int codigoAlumno, int edad, int celular, int estado, String nombre, String apellido, String dni) {
 		this.codigoAlumno = codigoAlumno;
 		this.edad = edad;
+		this.celular = celular;
+		this.estado = estado;
 		this.nombre = nombre;
 		this.apellido = apellido;
-		this.celular = celular;
 		this.dni = dni;
 	}
 	
@@ -24,18 +25,22 @@ public class Alumno {
    public void setEdad(int edad) {
 	   this.edad = edad;
    }
+   public void setCelular(int celular) {
+	   this.celular = celular;
+   }
+   public void setEstado(int estado) {
+	   this.estado = estado;
+   }
    public void setNombre(String nombre) {
 	   this.nombre = nombre;
    }
    public void setApellido(String apellido) {
 	   this.apellido = apellido;
    }
-   public void celular(String celular) {
-	   this.celular = celular;
-   }
-   public void dni(String dni) {
+   public void setDni(String dni) {
 	   this.dni = dni;
    }
+   
       //get
    public int getCodigoAlumno() {
 	   return codigoAlumno;
@@ -43,15 +48,19 @@ public class Alumno {
    public int getEdad() {
 	   return edad;
    }
+   public int  getCelular() {
+	   return celular;
+   }
+   public int  getEstado() {
+	   return estado;
+   }
    public String  getNombre() {
 	   return nombre;
    }
    public String getApellido() {
 	   return apellido;
    }
-   public String getCelular() {
-	   return celular;
-   }
+ 
    public String getDni() {
 	   return dni;
    }
