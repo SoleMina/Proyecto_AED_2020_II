@@ -6,10 +6,10 @@ public class Curso {
 	private String asignatura;
 
 	//	Constructor
-	public Curso(int codigoCurso, int ciclo, int crÃ©ditos, int horas, String asignatura) {
+	public Curso(int codigoCurso, int ciclo, int créditos, int horas, String asignatura) {
 		this.codigoCurso = codigoCurso;
 		this.ciclo = ciclo;
-		this.crÃ©ditos = crÃ©ditos;
+		this.créditos = créditos;
 		this.horas = horas;
 		this.asignatura = asignatura;
 	}
