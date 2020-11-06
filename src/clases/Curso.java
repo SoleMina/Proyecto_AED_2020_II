@@ -2,14 +2,21 @@ package clases;
 
 public class Curso {
     //	Atributos privados
-	private int codigoCurso, ciclo, créditos, horas;
+	private int codigoCurso, ciclo, creditos, horas;
 	private String asignatura;
 
 	//	Constructor
+<<<<<<< HEAD
 	public Curso(int codigoCurso, int ciclo, int cr�ditos, int horas, String asignatura) {
 		this.codigoCurso = codigoCurso;
 		this.ciclo = ciclo;
 		this.cr�ditos = cr�ditos;
+=======
+	public Curso(int codigoCurso, int ciclo, int creditos, int horas, String asignatura) {
+		this.codigoCurso = codigoCurso;
+		this.ciclo = ciclo;
+		this.creditos = creditos;
+>>>>>>> fc707458c5264fac9bc3be84ac961e43315a16aa
 		this.horas = horas;
 		this.asignatura = asignatura;
 	}
@@ -22,8 +29,8 @@ public class Curso {
 	public void setCiclo(int ciclo) {
 		this.ciclo = ciclo;
 	}
-	public void setCréditos(int créditos) {
-		this.créditos = créditos;
+	public void setcreditos(int creditos) {
+		this.creditos = creditos;
 	}
 	public void sethoras(int horas) {
 		this.horas = horas;
@@ -38,8 +45,8 @@ public class Curso {
 	public int getCiclo() {
 		return ciclo;
 	}
-	public int getCréditos() {
-		return créditos;
+	public int getcreditos() {
+		return creditos;
 	}
 	public int gethoras() {
 		return horas;
