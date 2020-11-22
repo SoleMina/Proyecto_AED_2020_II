@@ -35,6 +35,7 @@ public class DlgManAlumno extends JDialog implements ActionListener {
 	private JTextField txtApeAlumno;
 	private JScrollPane scrollPane;
 	private JTable tblAlumno;
+	private JButton btnOpciones;
 
 	/**
 	 * Launch the application.
@@ -145,6 +146,10 @@ public class DlgManAlumno extends JDialog implements ActionListener {
 		
 		tblAlumno = new JTable();
 		scrollPane.setViewportView(tblAlumno);
+		
+		btnOpciones = new JButton("Opciones");
+		btnOpciones.setBounds(386, 11, 89, 98);
+		getContentPane().add(btnOpciones);
 
 	}
 

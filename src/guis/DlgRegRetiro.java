@@ -33,6 +33,7 @@ public class DlgRegRetiro extends JDialog {
 	private JButton btnAdicionar_Retiro;
 	private JScrollPane scrollPane;
 	private JTable tblRetiro;
+	private JButton btnOpciones;
 
 	/**
 	 * Launch the application.
@@ -131,6 +132,10 @@ public class DlgRegRetiro extends JDialog {
 		
 		tblRetiro = new JTable();
 		scrollPane.setViewportView(tblRetiro);
+		
+		btnOpciones = new JButton("Opciones");
+		btnOpciones.setBounds(386, 13, 89, 89);
+		getContentPane().add(btnOpciones);
 
 	}
 

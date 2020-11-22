@@ -32,6 +32,7 @@ public class DlgManCurso extends JDialog {
 	private JTextField txtHorasCurso;
 	private JScrollPane scrollPane;
 	private JTable tblCurso;
+	private JButton btnOpciones;
 
 	/**
 	 * Launch the application.
@@ -133,6 +134,10 @@ public class DlgManCurso extends JDialog {
 		
 		tblCurso = new JTable();
 		scrollPane.setViewportView(tblCurso);
+		
+		btnOpciones = new JButton("Opciones");
+		btnOpciones.setBounds(386, 11, 89, 98);
+		getContentPane().add(btnOpciones);
 
 	}
 

@@ -33,6 +33,7 @@ public class DlgRegMatricula extends JDialog {
 	private JButton btnEliminar_Matricula;
 	private JButton btnConsultar_Matricula;
 	private JTable tblMatricula;
+	private JButton btnOpciones;
 
 	/**
 	 * Launch the application.
@@ -131,6 +132,10 @@ public class DlgRegMatricula extends JDialog {
 		btnConsultar_Matricula = new JButton("Consultar");
 		btnConsultar_Matricula.setBounds(485, 36, 89, 23);
 		getContentPane().add(btnConsultar_Matricula);
+		
+		btnOpciones = new JButton("Opciones");
+		btnOpciones.setBounds(386, 11, 89, 93);
+		getContentPane().add(btnOpciones);
 
 	}
 
