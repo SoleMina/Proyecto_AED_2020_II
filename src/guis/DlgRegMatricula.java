@@ -89,7 +89,6 @@ public class DlgRegMatricula extends JDialog {
 		getContentPane().add(lblCodigo);
 		
 		txtCodigoMatri = new JTextField();
-		txtCodigoMatri.setEditable(false);
 		txtCodigoMatri.setColumns(10);
 		txtCodigoMatri.setBounds(102, 12, 142, 20);
 		getContentPane().add(txtCodigoMatri);
@@ -187,6 +186,14 @@ public class DlgRegMatricula extends JDialog {
 		btnEliminar_Matricula = new JButton("Eliminar");
 		btnEliminar_Matricula.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				if(txtCodigoMatri.getText().length() <= 0 || txtCodigoMatri.getText().equals(null)) {
+					mensaje("Ingrese un Numero de Matricula Valido!!");
+				} else {
+					eliminarMatricula(); 
+				}
+
+				
 			}
 		});
 		btnEliminar_Matricula.setBounds(485, 86, 89, 23);
@@ -213,6 +220,8 @@ public class DlgRegMatricula extends JDialog {
 				habilitarBotones(true);
 				habilitarEntradas(false);
 				limpiarCampos();
+				btnGuardar.setEnabled(false);
+				txtCodigoMatri.setEditable(false);
 			}
 		});
 		btnOpciones.setEnabled(false);
@@ -246,12 +255,18 @@ public class DlgRegMatricula extends JDialog {
 				btnBuscar.setEnabled(true);
 				if (tipoDeOperacion == CONSULTAR) {
 					btnGuardar.setEnabled(false);
+					txtCodigoMatri.setEditable(true);
+					txtCodigoMatri.setEnabled(true);
+					//cboCodAlumno.setEditable(false);
+					//cboCurso.setEditable(false);
 				} else {
 					btnGuardar.setEnabled(true);
+					//cboCodAlumno.setEnabled(true);
+					//cboCurso.setEnabled(true);
 				}
 				consultaMatricula();
 				//modificarMatricula();
-				habilitarEntradas(true);
+				habilitarEntradas(false);
 			}
 		});
 		btnBuscar.setEnabled(false);
@@ -377,22 +392,22 @@ public class DlgRegMatricula extends JDialog {
 	public void eliminarMatricula() {
 
 		int codigo = Integer.parseInt(txtCodigoMatri.getText().trim());
+		
+		Matricula matricula = listaMatriculas.buscar(codigo);
 
-		Matricula Matricula = listaMatriculas.buscar(codigo);
-
-		if (Matricula != null) {
+		if (matricula != null) {
 
 			int confirm = JOptionPane.showConfirmDialog(null, " Desea Eliminar el Matricula ?");
 			// 0=yes, 1=no, 2=cancel
 			System.out.println(confirm);
 
 			if (confirm == 0) {
-				listaMatriculas.eliminar(Matricula);
+				listaMatriculas.eliminar(matricula);
 				listarMatriculas();
 			}
 
 		} else {
-			mensaje("Ingresar Codigo");
+			mensaje("Ingresar Codigo Valido!!");
 		}
 	}
 
