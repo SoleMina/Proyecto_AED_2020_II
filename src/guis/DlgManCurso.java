@@ -9,16 +9,12 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 import Arreglo.ArregloCurso;
-import clases.Alumno;
 import clases.Curso;
 
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.awt.event.ActionEvent;
 
 public class DlgManCurso extends JDialog {
@@ -265,6 +261,7 @@ public class DlgManCurso extends JDialog {
 				habilitarBotones(true);
 				habilitarEntradas(false);
 				limpiarCampos();
+				txtCodCurso.setEnabled(true);
 			}
 		});
 		btnOpciones.setEnabled(false);

@@ -256,8 +256,8 @@ public class DlgManAlumno extends JDialog implements ActionListener {
 		lblNewLabel.setBounds(218, 115, 46, 14);
 		getContentPane().add(lblNewLabel);
 
-		JComboBox cboEstado = new JComboBox();
-		cboEstado.setModel(new DefaultComboBoxModel(new String[] { "0", "1", "2" }));
+		JComboBox<String> cboEstado = new JComboBox<String>();
+		cboEstado.setModel(new DefaultComboBoxModel<String>(new String[] { "0", "1", "2" }));
 
 		cboEstado.setBounds(277, 111, 89, 22);
 		getContentPane().add(cboEstado);

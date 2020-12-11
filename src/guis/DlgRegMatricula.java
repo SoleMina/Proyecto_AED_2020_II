@@ -18,7 +18,6 @@ import clases.Matricula;
 import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
 import javax.swing.JButton;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
@@ -222,7 +221,8 @@ public class DlgRegMatricula extends JDialog {
 				habilitarEntradas(false);
 				limpiarCampos();
 				btnGuardar.setEnabled(false);
-				txtCodigoMatri.setEditable(false);
+				//txtCodigoMatri.setEditable(true);
+				txtCodigoMatri.setEnabled(true);
 			}
 		});
 		btnOpciones.setEnabled(false);
