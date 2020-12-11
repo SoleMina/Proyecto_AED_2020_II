@@ -7,12 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
 
 import Arreglo.ArregloAlumno;
 import Arreglo.ArregloCurso;
@@ -21,7 +17,6 @@ import clases.Alumno;
 import clases.Curso;
 import clases.Matricula;
 
-import java.awt.Color;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextPane;
@@ -147,27 +142,50 @@ public class DlgConsAlumnosCursos extends JDialog {
 					 // el alumno esta matriculado en el curso
 					 // setear los datos del alumno y del CURSO
 					 
-					 Curso curso = listaCurso.buscar(Integer.parseInt(codCurso));
+					 if(alumno.getEstado() == 1) {
+						 
+						 Curso curso = listaCurso.buscar(Integer.parseInt(codCurso));
+						 
+						 String datosAlumno = "";
+						 
+						 datosAlumno += "Cod. Alumno:   "+alumno.getCodigoAlumno()+"\n";
+						 datosAlumno += "Nombre:   "+alumno.getNombre()+"\n";
+						 datosAlumno += "Apellidos:   "+alumno.getApellido()+"\n";
+						 datosAlumno += "DNI:   "+alumno.getDni()+"\n";
+						 datosAlumno += "Edad:   "+alumno.getEdad()+"\n";
+						 datosAlumno += "Celular:   "+alumno.getCelular()+"\n";
+						 
+						 txtPanelAlumno.setText(datosAlumno);
+						 
+						 String datosCurso = "";
+						 datosCurso += "Cod. Curso:   "+curso.getCodigoCurso()+"\n";
+						 datosCurso += "Asignatura:   "+curso.getAsignatura()+"\n";
+						 datosCurso += "Ciclo:   "+curso.getCiclo()+"\n";
+						 datosCurso += "Creditos:   "+curso.getcreditos()+"\n";
+						 datosCurso += "Horas:   "+curso.gethoras()+"\n";
+						 					 
+						 txtPanelCurso.setText(datosCurso);
+						 
+					 } else {
+						 // alumno esta de Baja en el Curso
+						 String datosAlumno = "";
+						 
+						 datosAlumno += "Cod. Alumno:   "+alumno.getCodigoAlumno()+"\n";
+						 datosAlumno += "Nombre:   "+alumno.getNombre()+"\n";
+						 datosAlumno += "Apellidos:   "+alumno.getApellido()+"\n";
+						 datosAlumno += "DNI:   "+alumno.getDni()+"\n";
+						 datosAlumno += "Edad:   "+alumno.getEdad()+"\n";
+						 datosAlumno += "Celular:   "+alumno.getCelular()+"\n";
+						 
+						 txtPanelAlumno.setText(datosAlumno);
+						 
+						 String datosCurso = "";
+						 datosCurso += "El AlUMNO se RETIRO del CURSO";
+						 txtPanelCurso.setText(datosCurso);
+						 
+					 }
 					 
-					 String datosAlumno = "";
 					 
-					 datosAlumno += "Cod. Alumno:   "+alumno.getCodigoAlumno()+"\n";
-					 datosAlumno += "Nombre:   "+alumno.getNombre()+"\n";
-					 datosAlumno += "Apellidos:   "+alumno.getApellido()+"\n";
-					 datosAlumno += "DNI:   "+alumno.getDni()+"\n";
-					 datosAlumno += "Edad:   "+alumno.getEdad()+"\n";
-					 datosAlumno += "Celular:   "+alumno.getCelular()+"\n";
-					 
-					 txtPanelAlumno.setText(datosAlumno);
-					 
-					 String datosCurso = "";
-					 datosCurso += "Cod. Curso:   "+curso.getCodigoCurso()+"\n";
-					 datosCurso += "Asignatura:   "+curso.getAsignatura()+"\n";
-					 datosCurso += "Ciclo:   "+curso.getCiclo()+"\n";
-					 datosCurso += "Creditos:   "+curso.getcreditos()+"\n";
-					 datosCurso += "Horas:   "+curso.gethoras()+"\n";
-					 					 
-					 txtPanelCurso.setText(datosCurso);
 				 } else {
 					 
 					 // setear solo los datos del alumno

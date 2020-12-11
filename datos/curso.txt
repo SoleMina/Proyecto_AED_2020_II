@@ -2,3 +2,5 @@
 1003;3;10;150;Diseño organizacional;
 1004;6;12;56;Arte;
 1005;6;12;60;Quimica 2;
+1006;6;4;25;Ingles I;
+1007;2;6;120;Base de Datos;
