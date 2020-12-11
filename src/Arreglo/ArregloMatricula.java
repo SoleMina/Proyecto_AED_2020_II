@@ -10,15 +10,14 @@ import java.util.Optional;
 import clases.Matricula;
 
 public class ArregloMatricula {
-	
-	
+
 	private ArrayList<Matricula> listaMatriculas;
-	
-	public ArregloMatricula(){
+
+	public ArregloMatricula() {
 		listaMatriculas = new ArrayList<Matricula>();
 		cargarMatricula();
 	}
-	
+
 	public void adicionar(Matricula x) {
 		listaMatriculas.add(x);
 		grabarMatricula();
@@ -63,17 +62,17 @@ public class ArregloMatricula {
 	private void cargarMatricula() {
 		try {
 			BufferedReader al;
-			String fecha,hora, linea;
+			String fecha, hora, linea;
 			String[] s;
 			int numMatricula, codAlumno, codCurso;
-			
+
 			// ordenar lista
-			listaMatriculas.sort( (a, b) -> Integer.compare(a.getNumMatricula(),b.getNumMatricula()));
+			listaMatriculas.sort((a, b) -> Integer.compare(a.getNumMatricula(), b.getNumMatricula()));
 
 			al = new BufferedReader(new FileReader("datos/matricula.txt"));
-			
+
 			while ((linea = al.readLine()) != null) {
-				
+
 				s = linea.split(";");
 				numMatricula = Integer.parseInt(s[0].trim());
 				codAlumno = Integer.parseInt(s[1].trim());
@@ -96,15 +95,27 @@ public class ArregloMatricula {
 			String linea;
 			Matricula x;
 			pw = new PrintWriter(new FileWriter("datos/matricula.txt"));
-			
+
 			for (int i = 0; i < tamaño(); i++) {
 				x = obtener(i);
-				linea = x.getNumMatricula() + ";" + x.getCodAlumno() + ";" + x.getCodCurso() + ";" + x.getFecha() + ";"+ x.getHora() + ";";
+				linea = x.getNumMatricula() + ";" + x.getCodAlumno() + ";" + x.getCodCurso() + ";" + x.getFecha() + ";"
+						+ x.getHora() + ";";
 				pw.println(linea);
 			}
 			pw.close();
 		} catch (Exception e) {
 		}
+	}
+
+	public Matricula buscarPorAlumnoCurso(int codAlumno, int codCurso) {
+
+		for (int i = 0; i < tamaño(); i++) {
+
+			if (obtener(i).getCodAlumno() == codAlumno && obtener(i).getCodCurso() == codCurso)
+				return obtener(i);
+		}
+
+		return null;
 	}
 
 }
