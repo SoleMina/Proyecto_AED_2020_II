@@ -12,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import Arreglo.ArregloAlumno;
 import Arreglo.ArregloCurso;
 import Arreglo.ArregloMatricula;
+import clases.Alumno;
 import clases.Matricula;
 
 import javax.swing.JComboBox;
@@ -344,6 +345,9 @@ public class DlgRegMatricula extends JDialog {
 
 		Matricula Matricula = new Matricula(codigo, codAlumno, codCurso, fecha, horas);
 		listaMatriculas.adicionar(Matricula);
+		
+		// cambiar estado de Alumno a 1
+		actualizarEstadoAlumno(codAlumno);
 	}
 
 	public void consultaMatricula() {
@@ -458,5 +462,16 @@ public class DlgRegMatricula extends JDialog {
 		String convertido = hora.format(date);
 		
 		return convertido;
+	}
+	
+	public void actualizarEstadoAlumno(int codAlumno) {
+		
+		Alumno alumno = listaalumnos.buscar(codAlumno);
+		System.out.println("Objeto-->"+alumno);
+		
+		listaalumnos.eliminar(alumno);
+		alumno.setEstado(1);
+		listaalumnos.adicionar(alumno);
+		
 	}
 }

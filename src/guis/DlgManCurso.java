@@ -188,7 +188,13 @@ public class DlgManCurso extends JDialog {
 		btnEliminarCurso = new JButton("Eliminar");
 		btnEliminarCurso.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				eliminarCurso();
+				
+				if(txtCodCurso.getText().length() <= 0 || txtCodCurso.getText().equals(null)) {
+					
+					mensaje("Ingrese un Codigo de Curso Valido!!");
+				} else {
+					eliminarCurso();
+				}	
 			}
 		});
 		btnEliminarCurso.setBounds(485, 86, 89, 23);
