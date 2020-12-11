@@ -246,11 +246,8 @@ public class DlgManAlumno extends JDialog implements ActionListener {
 				habilitarBotones(true);
 				habilitarEntradas(false);
 				limpiar();
-			
-
 			}
-			
-			
+
 		});
 		btnOpciones.setBounds(386, 11, 89, 98);
 		getContentPane().add(btnOpciones);
@@ -363,24 +360,25 @@ public class DlgManAlumno extends JDialog implements ActionListener {
 	}
 
 	void adicionarAlumno() {
-		
+
 		int codigo = leerCodigo();
 		String nombre = leerNomAlumno();
 		String apellido = leerApeAlumno();
 		int edad = leerEdadAlumno();
 		String dni = leerDniAlumno();
 		int cel = leerCelAlumno();
-		int estado = 1;
+		int estado = 0;
+
 		Alumno dnis = alum.buscarDni(dni);
-		if(dnis == null) {
+
+		if (dnis == null) {
+
 			Alumno alumn = new Alumno(codigo, edad, cel, estado, nombre, apellido, dni);
-			alum.adicionar(alumn);	
+			alum.adicionar(alumn);
+
+		} else {
+			mensaje("El DNI se encuentra registrado");
 		}
-		
-		else {mensaje("El DNI se encuentra registrado");
-		}
-		
-		
 	}
 
 	void listar() {
@@ -441,19 +439,19 @@ public class DlgManAlumno extends JDialog implements ActionListener {
 		int codigo = leerCodigo();
 		Alumno a = alum.buscar(codigo);
 		if (a != null) {
-			
-			 int confirm = JOptionPane.showConfirmDialog(null, " Desea Eliminar ?");
-		        // 0=yes, 1=no, 2=cancel
-		        System.out.println(confirm);
 
-			if (confirm==0) {
+			int confirm = JOptionPane.showConfirmDialog(null, " Desea Eliminar ?");
+			// 0=yes, 1=no, 2=cancel
+			System.out.println(confirm);
+
+			if (confirm == 0) {
 				alum.eliminar(a);
 				listar();
-				
-			} 
-				
+
+			}
+
 		} else {
-          mensaje("Ingresar Codigo");
+			mensaje("Ingresar Codigo");
 		}
 	}
 

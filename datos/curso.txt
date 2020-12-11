@@ -1,0 +1,4 @@
+1002;2;5;120;Programacion;
+1003;3;10;150;Diseño organizacional;
+1004;6;12;56;Arte;
+1005;6;12;60;Quimica 2;
